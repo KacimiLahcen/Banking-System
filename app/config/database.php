@@ -46,7 +46,7 @@ class database{
     private PDO $conn;
 
     private function __construct(){
-        $this->conn = new PDO("mysql:host=localhost;dbname=banking-System;charset=utf8","root","");
+        $this->conn = new PDO("mysql:host=localhost;dbname=banking_system;charset=utf8","root","");
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     }

@@ -10,12 +10,12 @@ function menuPrincipal()
     echo "\n==============================\n";
     echo "🏦 SYSTÈME DE GESTION BANCAIRE\n";
     echo "==============================\n";
-    echo "1️⃣  Gestion des clients\n";
-    echo "2️⃣  Gestion des comptes\n";
-    echo "3️⃣  Dépôt / Retrait\n";
-    echo "4️⃣  Historique des transactions\n";
-    echo "0️⃣  Quitter\n";
-    echo "👉 Votre choix : ";
+    echo "1️  Gestion des clients\n";
+    echo "2️  Gestion des comptes\n";
+    echo "3️  Dépôt / Retrait\n";
+    echo "4️  Historique des transactions\n";
+    echo "0️  Quitter\n";
+    echo " ==> Votre choix : ";
 }
 
 while (true) {
@@ -25,10 +25,10 @@ while (true) {
     switch ($choix) {
 
         case "1":
-            echo "\n📁 Gestion des clients\n";
+            echo "\n Gestion des clients\n";
             echo "1 - Créer client\n";
             echo "2 - Afficher clients\n";
-            echo "👉 Choix : ";
+            echo " Choix : ";
             $c = trim(fgets(STDIN));
 
             if ($c == "1") {
@@ -48,7 +48,7 @@ while (true) {
                     'email' => $email
                 ]);
 
-                echo "✅ Client créé avec succès\n";
+                echo " Client créé avec succès\n";
             }
             break;
 
@@ -82,14 +82,14 @@ while (true) {
                 ]);
             }
 
-            echo "✅ Compte créé\n";
+            echo " Compte créé\n";
             break;
 
         case "3":
-            echo "\n💰 Opérations bancaires\n";
+            echo "\n Opérations bancaires\n";
             echo "1 - Dépôt\n";
             echo "2 - Retrait\n";
-            echo "👉 Choix : ";
+            echo " Choix : ";
             $op = trim(fgets(STDIN));
 
             echo "Compte ID : ";
@@ -98,7 +98,7 @@ while (true) {
             echo "Montant : ";
             $montant = trim(fgets(STDIN));
 
-            // ⚠️ simplification pédagogique
+            //  simplification pédagogique
             $compte = new CompteCourant(); // courant
 
             if ($op == "1") {
@@ -111,12 +111,13 @@ while (true) {
             break;
 
         case "4":
-            echo "\n📜 Historique des transactions\n";
+            echo "\n Historique des transactions\n";
             echo "Compte ID : ";
             $id = trim(fgets(STDIN));
 
             $transaction = new Transaction();
-            $transactions = $transaction->historiqueParCompte($id);
+            $transactions = $transaction->historiqueCompte($id);
+
 
             foreach ($transactions as $t) {
                 echo "{$t['date']} | {$t['type']} | {$t['montant']}\n";
@@ -124,10 +125,10 @@ while (true) {
             break;
 
         case "0":
-            echo "👋 Au revoir !\n";
+            echo " Au revoir !\n";
             exit;
 
         default:
-            echo "❌ Choix invalide\n";
+            echo " Choix invalide\n";
     }
 }

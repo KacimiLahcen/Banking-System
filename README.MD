@@ -23,6 +23,6 @@ Le but principal du projet est d’apprendre :
 
 
 ## étapes pour run:
-open terminal
-cd C:\xampp\htdocs\Banking-System
+open terminal *** <br>
+cd C:\xampp\htdocs\Banking-System  ***  <br>
 C:\xampp\php\php.exe main.php

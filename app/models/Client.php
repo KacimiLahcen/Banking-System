@@ -15,9 +15,10 @@ require_once __DIR__ . "/BaseModel.php";
         //constructor: obligate right data;
         public function __construct(string $nom, string $prenom, string $email)
         {
+            parent::__construct();
 
             $this->setNom($nom);
-            $this->setprenom($prenom);
+            $this->setPrenom($prenom);
 
             // $this->email = $email
             $this->setEmail($email); //setEmail insside constructor to respect encapsulation principle, so we validate it first and avoid storing invalide values 

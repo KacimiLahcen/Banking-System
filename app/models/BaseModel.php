@@ -2,14 +2,14 @@
 
 abstract class BaseModel
 {
-    protected static PDO $db;
+    protected static ?PDO $db = null;
     protected string $table;
 
     public function __construct()
     {
         if (!isset(self::$db)) {
             self::$db = new PDO(
-                "mysql:host=localhost;dbname=bank",
+                "mysql:host=localhost;dbname=banking_system",
                 "root",
                 ""
             );
